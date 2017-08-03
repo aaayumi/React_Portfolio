@@ -1,5 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import './index.css';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import TextField from 'material-ui/TextField';
 import RaisedButton from 'material-ui/RaisedButton';
@@ -15,40 +16,21 @@ import MoreVertIcon from 'material-ui/svg-icons/navigation/more-vert';
 class Header extends React.Component {
     render(){
         return(
+            
         <IconMenu
-    iconButtonElement={<IconButton><MoreVertIcon /></IconButton>}
-    anchorOrigin={{horizontal: 'left', vertical: 'top'}}
-    targetOrigin={{horizontal: 'left', vertical: 'top'}}
-  >
-    <MenuItem
-      primaryText="Copy & Paste"
-      rightIcon={<ArrowDropRight />}
-      menuItems={[
-        <MenuItem primaryText="Cut" />,
-        <MenuItem primaryText="Copy" />,
-        <Divider />,
-        <MenuItem primaryText="Paste" />,
-      ]}
-    />
-
-    <MenuItem
-      primaryText="Case Tools"
-      rightIcon={<ArrowDropRight />}
-      menuItems={[
-        <MenuItem primaryText="UPPERCASE" />,
-        <MenuItem primaryText="lowercase" />,
-        <MenuItem primaryText="CamelCase" />,
-        <MenuItem primaryText="Propercase" />,
-      ]}
-    />
-    <Divider />
-    <MenuItem primaryText="Download" leftIcon={<Download />} />
-    <Divider />
-    <MenuItem value="Del" primaryText="Delete" />
-
-  </IconMenu>
-);
-
+            iconButtonElement={<IconButton><MoreVertIcon /></IconButton>}
+            anchorOrigin={{horizontal: 'left', vertical: 'top'}}
+            targetOrigin={{horizontal: 'left', vertical: 'top'}}
+        >
+            
+        <MenuItem
+            primaryText="About" />
+        <MenuItem
+            primaryText="Work" />
+        <MenuItem
+            primaryText="Contact" />
+        </IconMenu> 
+    )
     }
 }
 
@@ -56,8 +38,8 @@ class About extends React.Component {
     render(){
         return(
         <div className="about">
-        <h1> Ayumi Saito </h1>
-        <img src="http://www.tabinotebook.com/wp-content/uploads/2017/01/PC237200-3-2.jpg" />
+        <h1 className="ayumi"> Ayumi Saito </h1>
+        <img className="profileImg" src="http://www.tabinotebook.com/wp-content/uploads/2017/01/PC237200-3-2.jpg" />
         <h2> A Creator / Developer / Dreamer </h2>
         </div>
         )
@@ -67,13 +49,15 @@ class About extends React.Component {
 class Work extends React.Component {
     render(){
         return(
-        <div className="work">
+        <div className="work container">
         <h2> My Work </h2>
+        <div class="row">
         <div class="col-sm-6">    
-        <img src="http://www.tabinotebook.com/wp-content/uploads/2017/07/P7161102-1.jpg" />
+        <img className="left" src="http://www.tabinotebook.com/wp-content/uploads/2017/07/P7161102-1.jpg" />
         </div>
         <div class="col-sm-6">
-        <img src="http://www.tabinotebook.com/wp-content/uploads/2017/07/P7161102-1.jpg" />
+        <img className="right" src="http://www.tabinotebook.com/wp-content/uploads/2017/07/P7161102-1.jpg" />
+        </div>
         </div>
       </div>
         )
@@ -109,13 +93,13 @@ class Contact extends React.Component {
     
     render(){
         return (
-        <div>
-          <form onSubmit={this.handleSubmit}>
-          <TextField floatingLabelText="Name" value={this.state.name} onChange={this.change} />
-          <TextField floatingLabelText="Email" value={this.state.email} onChange={this.change} />
-          <TextField floatingLabelText="Comment" value={this.state.comment} onChange={this.change} />
-            
-          <RaisedButton label="Submit" type="submit" />
+        <div className="container">
+          <form className="contact" onSubmit={this.handleSubmit}>
+          <TextField className="form" floatingLabelText="Name" value={this.state.name} onChange={this.change} /> <br/>
+          <TextField className="form" floatingLabelText="Email" value={this.state.email} onChange={this.change} /> <br/>
+          <TextField className="form" floatingLabelText="Comment" value={this.state.comment} onChange={this.change} />
+          <br/>
+          <RaisedButton className="button" label="Submit" type="submit" />
           <RaisedButton label="Clear" onClick={this.handleClear} />
         </form>
         </div>

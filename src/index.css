@@ -1,0 +1,43 @@
+@import url('https://fonts.googleapis.com/css?family=Quicksand|Varela+Round');
+
+body {
+  font-family: "Quicksand", sans-serif;
+}
+
+h1 , h2 {
+   font-family: "Varela Round", Gadget, sans-serif;
+   letter-spacing: 5px;
+   text-align:center;
+}
+
+.profileImg {
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  box-shadow: 0 5px 3px grey;
+  display: block;
+  margin: 0 auto;
+}
+
+img {
+  width: 300px;
+  height: 300px;
+  box-shadow: 0 5px 3px grey;
+}
+
+.left {
+    float: left;
+    margin-right: 100px;
+}
+
+.contact {
+  margin-top : 50px;
+  display: block;
+  margin: 0 auto;
+}
+
+.button {
+    margin-right: 20px;
+}
